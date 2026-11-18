@@ -2,17 +2,16 @@ import './App.css';
 import { useState } from 'react';
 import GenreList from './components/GenreList';
 import MovieList from './components/MovieList';
-import { movies } from './mock-data/movies'
-import { genres } from './mock-data/genres'
 
-function App() {
-	const [currentGenre, setGenre] = useState("")
+export default function App() {
+	const [currentGenre, setCurrentGenre] = useState("");
+
 	return(
 	<>
-		<GenreList/>
-		<MovieList/>
+		<GenreList setGenre={setCurrentGenre}/>
+		<MovieList currentGenre={currentGenre}/>
 	</>
 	)
 }
 
-export default App;
+
